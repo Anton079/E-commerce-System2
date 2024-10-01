@@ -18,21 +18,7 @@ namespace E_commerce_System2
 
         public void LoadData()
         {
-            try
-            {
-                using (StreamReader sr = new StreamReader(GetFilePath()))
-                {
-                    string line = " ";
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                          _order.Add(new Order(line)); 
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
+            _order.Add(new Order(1, 2, "Anton", "Anton@gmail.com", "Suc"));
         }
 
         public string GetFilePath()

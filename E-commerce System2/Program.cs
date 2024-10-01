@@ -6,7 +6,6 @@ internal class Program
     {
         //Cart cart = new Cart();
 
-        //cart.AddToCart();
 
         //ProductsService productsService = new ProductsService();
 
@@ -14,8 +13,10 @@ internal class Program
 
         Cart cart = new Cart();
 
-        cart.CheckOut();
+        //cart.CheckOut();
 
-        //cart.ViewOrderHistory(12);
+        //cart.AddToCart();
+
+        cart.ViewOrderHistory(2);
     }
 }

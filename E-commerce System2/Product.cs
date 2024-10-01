@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_commerce_System2
 {
-    public class Product
+    public class Product : IAction
     {
         private int _id;
         private string _name;
@@ -55,6 +55,31 @@ namespace E_commerce_System2
         public string ToSave()
         {
             return Id + "," + Name + "," + Price + "," + Stock;
+        }
+
+        //==============IAction================== 
+
+        public string AddToCart()
+        {
+            if (_stock > 0)
+            {
+                _stock--;
+                return $"{_name} a fost adăugat în coș. Stoc rămas: {_stock}";
+            }
+            else
+            {
+                return $"{_name} nu este disponibil în stoc.";
+            }
+        }
+
+        public void CheckOut()
+        {
+            Console.WriteLine($"{_name} a fost achiziționat. Preț total: {_price}");
+        }
+
+        public void ViewOrderHistory(int idUser)
+        {
+            Console.WriteLine($"Vizualizare istoric comenzi pentru utilizatorul cu ID-ul {idUser}.");
         }
     }
 }

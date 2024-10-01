@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_commerce_System2
 {
-    public class ProductsService
+    public class ProductsService 
     {
         private List<Product> product;
 
@@ -19,9 +19,9 @@ namespace E_commerce_System2
         public void LoadData()
         {
             product.Add(new Product(1,"Suc",12,120) );
-            product.Add(new Product(2, "Sare", 5, 312));
-            product.Add(new Product(3, "Paine", 1, 421));
-            product.Add(new Product(4, "Mere", 15, 51));
+            product.Add(new Product(2,"Sare",5,312));
+            product.Add(new Product(3,"Paine",1,421));
+            product.Add(new Product(4,"Mere",15,51));
         }
 
         public bool SearchProduct(string productWanted)

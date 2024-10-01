@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_commerce_System2
 {
-    public class Cart : Actions
+    public class Cart : IAction
     {
         private HistoryOrderService order;
         private ProductsService products;
@@ -17,7 +17,7 @@ namespace E_commerce_System2
             order = new HistoryOrderService();
         }
 
-        public override string AddToCart()
+        public string AddToCart()
         {
             string yourCart = "Cosul tau contine:";
             int yourCartPrice = 0;
@@ -65,22 +65,20 @@ namespace E_commerce_System2
 
         }
 
-        public override void CheckOut()
+        public void CheckOut()
         {
             string yourCart = AddToCart();
-
-            //Console.WriteLine($"Cosul tau este in valoare de: ");
 
             Console.WriteLine("Vrei sa plasezi comanda(Da sau Nu)?");
             string raspuns = Console.ReadLine();
 
-            if(raspuns == "Da")
+            if (raspuns == "Da")
             {
                 order.AddOrderByIdUser(yourCart);
             }
         }
 
-        public override void ViewOrderHistory(int idUser)
+        public void ViewOrderHistory(int idUser)
         {
             order.ViewOrderByIdCustomer(idUser);
         }
